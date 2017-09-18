@@ -1,0 +1,29 @@
+<section class="hero is-primary is-bold is-large">
+  <div class="hero-head">
+    <header class="nav">
+      <div class="container">
+        <div class="nav-left">
+          <a class="nav-item" href="#">PlumSt</a>
+        </div>
+        <span class="nav-toggle" @click="toggleNav" :class="{ 'is-active': mobileNav }">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="nav-right nav-menu" :class="{ 'is-active': mobileNav }">
+          <a class="nav-item is-active" href="#">Home</a>
+          <a class="nav-item" href="#services">Services</a>
+          <a class="nav-item" href="#about">About</a>
+          <a class="nav-item" href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="hero-body">
+    <div class="container">
+
+      <h1 class="title">Plum Street Group</h1>
+      <h2 class="subtitle">Custom Web Solutions</h2>
+    </div>
+  </div>
+</section>
