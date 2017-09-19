@@ -25,10 +25,10 @@ $danger: #d7263d;
 body {
   background-color: #AAA;
 }
-
+*/
 .has-text-red {
   color: $red;
-}*/
+}
 
 //Custom changes -----------------------
 
@@ -39,6 +39,17 @@ nav.nav.is-primary {
     color: $red;
     border-bottom: 3px solid $red;
   }
+}
+
+//flickity carousel
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8c8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;
 }
 
 body {

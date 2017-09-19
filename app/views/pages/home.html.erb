@@ -3,7 +3,8 @@
     <div class="nav-left">
       <a class="nav-item" href="../index.html">
         <!--<img src="../images/bulma.png" alt="Description">-->
-        <%= image_tag 'bulma', alt: 'Brand Logo' %>
+        <!--%= image_tag 'bulma', alt: 'Brand Logo' %>-->
+        <span class="title has-text-red">O'Hara Football</span>
       </a>
     </div>
     <span class="nav-toggle">
@@ -45,11 +46,16 @@
         </div>
       </div>-->
       <div class="column is-6 name">
-        <p>
+        <!--<p>
           <span class="title is-bold">John Smith</span>
           <span class="button is-primary is-outlined follow">Follow</span>
         </p>
-        <p class="tagline">The users profile bio would go here, of course. It could be two lines</p>
+        <p class="tagline">The users profile bio would go here, of course. It could be two lines</p>-->
+        <div class="main-carousel" data-flickity='{"wrapAround": true}'>
+          <div class="carousel-cell"><%= image_tag 'qb' %></div>
+          <div class="carousel-cell"><%= image_tag 'qb' %></div>
+          <div class="carousel-cell"><%= image_tag 'qb' %></div>
+        </div>
       </div>
       <div class="column is-2 followers has-text-centered">
         <p class="stat-val">129k</p>
