@@ -34,6 +34,10 @@ body {
   background: #FFFFFF;
 }
 
+.has-background-red {
+  background: $red;
+}
+
 //Custom changes -----------------------
 
 nav.nav.is-primary {
@@ -50,6 +54,21 @@ div.column.likes.up-next-div {
 
   h1.up-next-date {
     margin-bottom: 0;
+  }
+}
+
+section.hero.ohara-fan-hero {
+  background-image: image-url('ohara-fans.png');
+  background-size: 100% auto;
+  position: relative;
+  .ohara-fan-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(189, 16, 33, 0.7);
+  }
+  .pride-slogan {
+    word-spacing: 5px;
   }
 }
 
@@ -88,10 +107,10 @@ body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 .container.profile {
-  margin-top:20px;
+  //margin-top:20px;
 }
 .profile-heading {
-  margin: 20px 0;
+  //margin: 20px 0;
   padding-bottom: 50px;
 }
 .profile-heading .name {
