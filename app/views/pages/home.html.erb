@@ -121,210 +121,31 @@
       <ul>
         <li class="link is-active"><a><span class="icon"><i class="fa fa-calendar-o"></i></span> <span>Upcoming Shedule</span></a></li>
         <li class="link"><a><span class="icon"><i class="fa fa-newspaper-o"></i></span> <span>Recent Stories</span></a></li>
-        <li class="link"><a><span class="icon"><i class="fa fa-twitter"></i></span> <span>Social Media</span></a></li>
+        <li class="link"><a><span class="icon"><i class="fa fa-twitter-square"></i></span> <span>Social Media</span></a></li>
         <li class="link"><a><span class="icon"><i class="fa fa-commenting-o"></i></span> <span>Contact Us</span></a></li>
       </ul>
     </div>
   </div>
 
-  <div class="box">
-    <!-- Main container -->
-    <nav class="level">
-      <!-- Left side -->
-      <div class="level-left">
-        <div class="level-item">
-          <p class="subtitle is-5">
-            <strong>123</strong> posts
-          </p>
-        </div>
-        <div class="level-item">
-          <p class="control has-addons">
-            <input class="input" type="text" placeholder="Find a post">
-            <button class="button">
-              Search
-            </button>
-          </p>
-        </div>
-      </div>
-
-      <!-- Right side -->
-      <div class="level-right">
-        <p class="level-item"><strong>All</strong></p>
-        <p class="level-item"><a>Published</a></p>
-        <p class="level-item"><a>Drafts</a></p>
-        <p class="level-item"><a>Deleted</a></p>
-        <p class="level-item"><a class="button is-success">New</a></p>
-      </div>
-    </nav>
-  </div>
-
   <div class="spacer"></div>
 
   <div class="columns">
-    <div class="column is-3">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <span class="tag is-dark">#webdev</span>
-            <strong class="timestamp">2 d</strong>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a class="card-footer-item">Save</a>
-          <a class="card-footer-item">Edit</a>
-          <a class="card-footer-item">Delete</a>
-        </footer>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <span class="tag is-dark">#webdev</span>
-            <strong class="timestamp">2 d</strong>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a class="card-footer-item">Save</a>
-          <a class="card-footer-item">Edit</a>
-          <a class="card-footer-item">Delete</a>
-        </footer>
-      </div>
-      <br>
 
-    </div>
-    <div class="column is-3">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <span class="tag is-dark">#webdev</span>
-            <strong class="timestamp">2 d</strong>
+    <% @upcoming_games.each do |game| %>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-header">
+              <p class="card-header-title"><%= game.opponent %></p>
+            </div>
+            <div class="card-content game-card">
+              <p class="is-size-7"><%= game.time %></p>
+              <span class="tag <%= game.home_away == 'H' ? 'has-background-red' : 'is-primary' %>">
+                <%= game.home_away == 'H' ? 'Home' : 'Away' %>
+              </span>
+            </div>
           </div>
         </div>
-        <footer class="card-footer">
-          <a class="card-footer-item">Save</a>
-          <a class="card-footer-item">Edit</a>
-          <a class="card-footer-item">Delete</a>
-        </footer>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <span class="tag is-dark">#webdev</span>
-            <strong class="timestamp">2 d</strong>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a class="card-footer-item">Save</a>
-          <a class="card-footer-item">Edit</a>
-          <a class="card-footer-item">Delete</a>
-        </footer>
-      </div>
-      <br>
-
-    </div>
-    <div class="column is-3">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <span class="tag is-dark">#webdev</span>
-            <strong class="timestamp">2 d</strong>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a class="card-footer-item">Save</a>
-          <a class="card-footer-item">Edit</a>
-          <a class="card-footer-item">Delete</a>
-        </footer>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <span class="tag is-dark">#webdev</span>
-            <strong class="timestamp">2 d</strong>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a class="card-footer-item">Save</a>
-          <a class="card-footer-item">Edit</a>
-          <a class="card-footer-item">Delete</a>
-        </footer>
-      </div>
-      <br>
-
-    </div>
-    <div class="column is-3">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <span class="tag is-dark">#webdev</span>
-            <strong class="timestamp">2 d</strong>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a class="card-footer-item">Save</a>
-          <a class="card-footer-item">Edit</a>
-          <a class="card-footer-item">Delete</a>
-        </footer>
-      </div>
-      <br>
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img src="http://placehold.it/300x225" alt="">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <span class="tag is-dark">#webdev</span>
-            <strong class="timestamp">2 d</strong>
-          </div>
-        </div>
-        <footer class="card-footer">
-          <a class="card-footer-item">Save</a>
-          <a class="card-footer-item">Edit</a>
-          <a class="card-footer-item">Delete</a>
-        </footer>
-      </div>
-      <br>
-
-    </div>
-
+    <% end %>
   </div>
+
 </div>

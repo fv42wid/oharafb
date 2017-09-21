@@ -36,6 +36,7 @@ body {
 
 .has-background-red {
   background: $red;
+  color: #AAA;
 }
 
 //Custom changes -----------------------
@@ -69,6 +70,13 @@ section.hero.ohara-fan-hero {
   }
   .pride-slogan {
     word-spacing: 5px;
+  }
+}
+
+.card-content.game-card {
+  padding-top: 10px;
+  p {
+    margin-bottom: 5px;
   }
 }
 
