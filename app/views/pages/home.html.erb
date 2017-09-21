@@ -74,37 +74,19 @@
         </p>
         <p class="tagline">The users profile bio would go here, of course. It could be two lines</p>-->
         <div class="main-carousel" data-flickity='{"wrapAround": true, "autoPlay": true}'>
-          <div class="carousel-cell" >
-            <%= image_tag 'qb', class: 'carousel-image' %>
-            <div class="carousel-overlay">
-              <h2>A Movie in the Park: Kung Fu Panda</h2>
+          <% @stories.each do |story| %>
 
+            <div class="carousel-cell">
+              <%= image_tag story.image, class: 'carousel-image' %>
+              <div class="carousel-overlay">
+                <a class="story-link"><h2><%= story.title %></h2></a>
+                <p><%= story.body[0, 80] %>...</p>
+              </div>
             </div>
-          </div>
-          <div class="carousel-cell" >
-            <%= image_tag 'qb', class: 'carousel-image' %>
-            <div class="carousel-overlay">
-              <h2>A Movie in the Park: Kung Fu Panda</h2>
-
-            </div>
-          </div>
-          <div class="carousel-cell" >
-            <%= image_tag 'qb', class: 'carousel-image' %>
-            <div class="carousel-overlay">
-              <h2>A Movie in the Park: Kung Fu Panda</h2>
-
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
-      <!--<div class="column is-5 followers has-text-centered">
-        <p class="stat-val">129k</p>
-        <p class="stat-key">followers</p>
-      </div>-->
-      <!--<div class="column is-2 following has-text-centered">
-        <p class="stat-val">2k</p>
-        <p class="stat-key">following</p>
-      </div>-->
+
       <div class="column is-5 likes up-next-div">
         <h1 class="title is-6 up-next-date">9/22/17 - 7 PM</h1>
         <h2 class="title is-2 has-text-primary">Up Next</h2>
