@@ -140,7 +140,7 @@
               <p class="card-header-title"><%= game.opponent %></p>
             </div>
             <div class="card-content game-card">
-              <p class="is-size-7"><%= game.time %></p>
+              <p class="is-size-7"><%= game.time.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d @ %l:%M %p") %></p>
               <span class="tag <%= game.home_away == 'H' ? 'has-background-red' : 'is-primary' %>">
                 <%= game.home_away == 'H' ? 'Home' : 'Away' %>
               </span>

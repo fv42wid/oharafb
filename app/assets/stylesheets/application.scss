@@ -16,6 +16,8 @@
 
 //color theme
 $primary: #001039;
+$light: #19274c;
+$dark: #000b27;
 $primary-invert: #AAAAAA;
 $red: #bd1021;
 $danger: #d7263d;
@@ -37,6 +39,13 @@ body {
 .has-background-red {
   background: $red;
   color: #AAA;
+}
+
+span.nav-toggle {
+  &:hover {
+    background-color: $dark;
+  }
+
 }
 
 //Custom changes -----------------------
