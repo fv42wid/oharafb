@@ -1,16 +1,16 @@
 <template>
     <ul>
         <li class="link" :class="{'is-active': activeTab.schedule}">
-            <a><span class="icon"><i class="fa fa-calendar-o"></i></span> <span>Upcoming Shedule</span></a>
+            <a @click.prevent="setTab('schedule')"><span class="icon"><i class="fa fa-calendar-o"></i></span> <span>Upcoming Shedule</span></a>
         </li>
         <li class="link" :class="{'is-active': activeTab.stories}">
-            <a><span class="icon"><i class="fa fa-newspaper-o"></i></span> <span>Recent Stories</span></a>
+            <a @click.prevent="setTab('stories')"><span class="icon"><i class="fa fa-newspaper-o"></i></span> <span>Recent Stories</span></a>
         </li>
         <li class="link" :class="{'is-active': activeTab.social}">
-            <a><span class="icon"><i class="fa fa-twitter-square"></i></span> <span>Social Media</span></a>
+            <a @click.prevent="setTab('social')"><span class="icon"><i class="fa fa-twitter-square"></i></span> <span>Social Media</span></a>
         </li>
         <li class="link" :class="{'is-active': activeTab.contact}">
-            <a><span class="icon"><i class="fa fa-commenting-o"></i></span> <span>Contact Us</span></a>
+            <a @click.prevent="setTab('contact')"><span class="icon"><i class="fa fa-commenting-o"></i></span> <span>Contact Us</span></a>
         </li>
     </ul>
 </template>
@@ -25,6 +25,12 @@
                     social: false,
                     contact: false
                 }
+            }
+        },
+        methods: {
+            setTab(tab) {
+                Object.keys(this.activeTab).forEach(v => this.activeTab[v] = false)
+                this.activeTab[tab] = true
             }
         },
         created() {
