@@ -52,7 +52,6 @@
             console.log('main tabs created')
         },
         components: {
-            ScheduleTab,
             'schedule-tab' : ScheduleTab
         }
     }
