@@ -16,6 +16,7 @@ Vue.use(VueResource)
 Vue.use(TurbolinksAdapter)
 
 
+
 document.addEventListener('turbolinks:load', () => {
   Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
 
