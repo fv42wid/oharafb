@@ -1,49 +1,20 @@
-<nav class="nav has-shadow is-primary" id="top">
-  <div class="container">
-    <div class="nav-left">
-      <a class="nav-item" href="../index.html">
-        <!--<img src="../images/bulma.png" alt="Description">-->
-        <!--%= image_tag 'bulma', alt: 'Brand Logo' %>-->
-        <span class="title has-text-red">O'Hara Football</span>
-      </a>
-    </div>
-    <span class="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    <div class="nav-right nav-menu">
-      <a class="nav-item is-tab is-active">
-        Home
-      </a>
-      <a class="nav-item is-tab">
-        Roster
-      </a>
-      <a class="nav-item is-tab">
-        Schedule
-      </a>
-      <a class="nav-item is-tab">
-        Coaches
-      </a>
-      <a class="nav-item is-tab">
-        Alumni
-      </a>
-      <!--
-      <a class="nav-item is-tab">
-        Video
-      </a>-->
-      <!--
-      <a class="nav-item is-tab">
-        Contact Us
-      </a>-->
-      <!--<span class="nav-item">
-          <a class="button">
-            Log in
-          </a>
-          <a class="button is-info">
-            Sign up
-          </a>
-        </span>-->
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">O'Hara Football</a>
+
+  <button class="button navbar-burger is-primary" @click="toggleNav" :class="{'is-active': mobileNav}">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  </div>
+  <div class="navbar-menu" :class="{'is-active': mobileNav}">
+    <div class="navbar-end is-primary">
+    <a class="navbar-item ">Home</a>
+    <a class="navbar-item">Roster</a>
+    <a class="navbar-item">Schedule</a>
+    <a class="navbar-item">Coaches</a>
+    <a class="navbar-item">Alumni</a>
     </div>
   </div>
 </nav>
@@ -55,27 +26,14 @@
       <h1 class="title has-text-white pride-slogan">Pride Excellence Tradition</h1>
     </div>
   </div>
-
 </section>
 
 <div class="container profile">
-
   <div class="section profile-heading has-background-white">
     <div class="columns is-gapless">
-      <!--<div class="column is-2">
-        <div class="image is-128x128 avatar">
-          <img src="https://placehold.it/256x256">
-        </div>
-      </div>-->
       <div class="column is-7 name">
-        <!--<p>
-          <span class="title is-bold">John Smith</span>
-          <span class="button is-primary is-outlined follow">Follow</span>
-        </p>
-        <p class="tagline">The users profile bio would go here, of course. It could be two lines</p>-->
-        <div class="main-carousel" data-flickity='{"wrapAround": true, "autoPlay": true}'>
+        <div class="main-carousel">
           <% @stories.each do |story| %>
-
             <div class="carousel-cell">
               <%= image_tag story.image, class: 'carousel-image' %>
               <div class="carousel-overlay">
@@ -86,7 +44,6 @@
           <% end %>
         </div>
       </div>
-
       <div class="column is-5 likes up-next-div">
         <h1 class="title is-6 up-next-date">9/22/17 - 7 PM</h1>
         <h2 class="title is-2 has-text-primary">Up Next</h2>
@@ -123,7 +80,7 @@
             </div>
             <div class="card-content game-card">
               <p class="is-size-7"><%= game.time.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d @ %l:%M %p") %></p>
-              <span class="tag <%= game.home_away == 'H' ? 'has-background-red' : 'is-primary' %>">
+              <span class="tag <%= game.home_away == 'H' ? 'is-danger' : 'is-primary' %>">
                 <%= game.home_away == 'H' ? 'Home' : 'Away' %>
               </span>
             </div>
@@ -131,7 +88,6 @@
         </div>
     <% end %>
   </div>
-
 </div>
 
 <footer class="footer ohara-footer">

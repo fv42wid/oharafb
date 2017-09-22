@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import "bulma/sass/utilities/initial-variables";
+
 //color theme
 $primary: #001039;
 $light: #19274c;
@@ -22,7 +24,7 @@ $primary-invert: #AAAAAA;
 $red: #bd1021;
 $danger: #d7263d;
 
-@import "bulma";
+@import "bulma/bulma";
 
 body {
   background-color: #AAA;
@@ -41,23 +43,7 @@ body {
   color: #AAA;
 }
 
-span.nav-toggle {
-  &:hover {
-    background-color: $dark;
-  }
-
-}
-
 //Custom changes -----------------------
-
-nav.nav.is-primary {
-  background-color: $primary;
-
-  .nav-item.is-active {
-    color: $red;
-    border-bottom: 3px solid $red;
-  }
-}
 
 div.column.likes.up-next-div {
   margin-left: 10px;
@@ -128,6 +114,10 @@ section.hero.ohara-fan-hero {
       font-size: 0.7em;
     }
   }
+}
+
+.nav-menu.nav-right.is-primary {
+  background-color: $primary;
 }
 
 .flickity-page-dots {
