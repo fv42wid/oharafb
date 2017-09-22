@@ -10,6 +10,8 @@ import TurbolinksAdapter from 'vue-turbolinks'
 import VueResource from 'vue-resource'
 import Flickity from 'flickity'
 
+import MainTabs from './layout/main-tabs.vue'
+
 Vue.use(VueResource)
 Vue.use(TurbolinksAdapter)
 
@@ -38,6 +40,9 @@ document.addEventListener('turbolinks:load', () => {
       created: function() {
           console.log('main vue created')
 
+      },
+      components: {
+          'main-tabs' : MainTabs
       }
   })
 })
