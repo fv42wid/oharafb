@@ -8,14 +8,14 @@
 import Vue from 'vue/dist/vue.esm'
 import TurbolinksAdapter from 'vue-turbolinks'
 import VueResource from 'vue-resource'
+import VeeValidate from 'vee-validate'
 import Flickity from 'flickity'
 
 import MainTabs from './layout/main-tabs.vue'
 
 Vue.use(VueResource)
 Vue.use(TurbolinksAdapter)
-
-
+Vue.use(VeeValidate)
 
 document.addEventListener('turbolinks:load', () => {
   Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')

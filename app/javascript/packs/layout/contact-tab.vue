@@ -30,18 +30,31 @@
                             <label class="label">Name</label>
                             <input type="text"
                                    class="input"
+                                   name="name"
+                                   v-model="contact.name"
+                                   :disabled="loading"
+                                   v-validate="'required'"
                                    placeholder="Name">
+                            <p class="help is-danger" v-show="errors.has('name')">{{ errors.first('name') }}</p>
                         </div>
+
                         <div class="field">
                             <label class="label">Email</label>
                             <input type="email"
                                    class="input"
+                                   name="email"
+                                   v-model="contact.email"
+                                   :disabled="loading"
+                                   v-validate="'required|email'"
                                    placeholder="Email">
+                            <p class="help is-danger" v-show="errors.has('email')">{{ errors.first('email') }}</p>
                         </div>
                         <div class="field">
                             <div class="control">
                                 <label class="checkbox">
-                                    <input type="checkbox">
+                                    <input type="checkbox"
+                                           v-model="contact.updates"
+                                           :disabled="loading">
                                       Receive email updates
                                     </input>
                                 </label>
@@ -51,24 +64,43 @@
                             <label class="label">Phone</label>
                             <input type="text"
                                    class="input"
+                                   name="phone"
+                                   v-model="contact.phone"
+                                   :disabled="loading"
+                                   v-validate="'required'"
                                    placeholder="Phone Number">
+                            <p class="help is-danger" v-show="errors.has('phone')">{{ errors.first('phone') }}</p>
                         </div>
                         <div class="field">
                             <label class="label">Preferred Contact Method</label>
                             <input type="text"
                                    class="input"
+                                   name="contact_method"
+                                   v-model="contact.contact_method"
+                                   :disabled="loading"
+                                   v-validate="'required'"
                                    placeholder="Preferred Contact Method">
+                            <p class="help is-danger" v-show="errors.has('contact_method')">{{ errors.first('contact_method') }}</p>
                         </div>
                         <div class="field">
                             <label class="label">Message</label>
                             <textarea class="textarea"
+                                      name="message"
+                                      v-model="contact.message"
+                                      :disabled="loading"
+                                      v-validate="'required'"
                                       placeholder="Your Message"></textarea>
+                            <p class="help is-danger" v-show="errors.has('message')">{{ errors.first('message') }}</p>
                         </div>
                     </form>
                 </section>
                 <footer class="modal-card-foot">
-                    <button class="button is-primary">Contact</button>
-                    <button class="button">Cancel</button>
+                    <button class="button is-primary"
+                            :class="{'is-loading': loading}"
+                            type="submit"
+                            @click="submitForm"
+                            :disabled="!formIsValid">Contact</button>
+                    <button class="button" @click.prevent="modalOpen = !modalOpen">Cancel</button>
                 </footer>
             </div>
         </div>
@@ -79,7 +111,35 @@
     export default {
         data() {
             return {
-                modalOpen: false
+                modalOpen: false,
+                loading: false,
+                contact: {
+                    name: '',
+                    email: '',
+                    updates: false,
+                    phone: '',
+                    contact_method: '',
+                    message: ''
+                }
+            }
+        },
+        methods: {
+            submitForm() {
+                this.loading = true
+                setTimeout(() => this.loading = false, 1000);
+                setTimeout(() => this.modalOpen = false, 1000);
+                //this.loading = false
+                //this.modalOpen = false
+            }
+        },
+        computed: {
+            formIsValid() {
+                if(this.errors.any() || this.contact.name == '' || this.contact.email == '' ||
+                this.contact.phone == '' || this.contact.contact_method == '' || this.contact.message == '') {
+                    return false
+                } else {
+                    return true
+                }
             }
         }
     }
