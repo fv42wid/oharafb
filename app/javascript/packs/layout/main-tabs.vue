@@ -23,6 +23,7 @@
 
         <schedule-tab :games="upcomingGames" v-if="this.activeTab.schedule"></schedule-tab>
         <stories-tab :upcomingstories="latestStories" v-if="this.activeTab.stories"></stories-tab>
+        <social-tab v-if="this.activeTab.social"></social-tab>
 
     </div>
 </template>
@@ -30,6 +31,7 @@
 <script>
     import ScheduleTab from './schedule-tab.vue'
     import StoriesTab from './stories-tab.vue'
+    import SocialTab from './social-tab.vue'
 
     export default {
         data() {
@@ -55,9 +57,11 @@
             console.log('main tabs created')
         },
         components: {
+            SocialTab,
             StoriesTab,
             'schedule-tab' : ScheduleTab,
-            'stories-tab' : StoriesTab
+            'stories-tab' : StoriesTab,
+            'social-tab' : SocialTab
         }
     }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="columns">
+    <div class="columns tabs-column">
         <div class="column is-4" v-for="story in stories" :key="story.id">
             <div class="card">
                 <div class="card-header">

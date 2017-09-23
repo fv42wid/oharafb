@@ -1,5 +1,5 @@
 <template>
-    <div class="columns">
+    <div class="columns tabs-column">
         <div class="column is-3" v-for="game in upcomingGames" :key="game.id">
             <div class="card">
                 <div class="card-header">
