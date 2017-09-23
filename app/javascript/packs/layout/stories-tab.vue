@@ -6,7 +6,7 @@
                     <p class="card-header-title">{{ story.title }}</p>
                 </div>
                 <div class="card-content">
-                    <p>
+                    <p class="is-size-7">
                         {{ story.body.substring(0,90) }}...
                     </p>
                 </div>
