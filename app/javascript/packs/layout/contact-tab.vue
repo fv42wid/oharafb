@@ -10,8 +10,8 @@
                         You can follow us on twitter at
                         <a href="https://twitter.com/OHara_Football">@OHara_Football</a>, on
                         Facebook at
-                        <a href="https://www.facebook.com/Cardinal-OHara-Lions-Football-345813222263593/">O'Hara Football</a>
-                        , or reach out to us <a @click.prevent="modalOpen = !modalOpen">here</a>.
+                        <a href="https://www.facebook.com/Cardinal-OHara-Lions-Football-345813222263593/">O'Hara Football</a>,
+                        or reach out to us <a @click.prevent="modalOpen = !modalOpen">here</a>.
                     </p>
                 </div>
             </div>
