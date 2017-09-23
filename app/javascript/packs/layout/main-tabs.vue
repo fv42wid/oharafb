@@ -22,12 +22,14 @@
         <div class="spacer"></div>
 
         <schedule-tab :games="upcomingGames" v-if="this.activeTab.schedule"></schedule-tab>
+        <stories-tab :upcomingstories="latestStories" v-if="this.activeTab.stories"></stories-tab>
 
     </div>
 </template>
 
 <script>
     import ScheduleTab from './schedule-tab.vue'
+    import StoriesTab from './stories-tab.vue'
 
     export default {
         data() {
@@ -38,10 +40,11 @@
                     social: false,
                     contact: false
                 },
-                upcomingGames: this.games
+                upcomingGames: this.games,
+                latestStories: this.stories
             }
         },
-        props: ['games'],
+        props: ['games', 'stories'],
         methods: {
             setTab(tab) {
                 Object.keys(this.activeTab).forEach(v => this.activeTab[v] = false)
@@ -52,7 +55,9 @@
             console.log('main tabs created')
         },
         components: {
-            'schedule-tab' : ScheduleTab
+            StoriesTab,
+            'schedule-tab' : ScheduleTab,
+            'stories-tab' : StoriesTab
         }
     }
 </script>
