@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/home', to: 'pages#home'
   get '/roster', to: 'pages#roster'
+  get '/schedule', to: 'pages#schedule'
 
   root 'pages#home'
 

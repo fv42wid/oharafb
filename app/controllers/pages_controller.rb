@@ -8,4 +8,8 @@ class PagesController < ApplicationController
   def roster
 
   end
+
+  def schedule
+
+  end
 end
