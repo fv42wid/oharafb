@@ -12,4 +12,8 @@ class PagesController < ApplicationController
   def schedule
 
   end
+
+  def coaches
+
+  end
 end
