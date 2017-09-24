@@ -1,33 +1,3 @@
-<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="#">O'Hara Football</a>
-
-  <button class="button navbar-burger is-primary" @click="toggleNav" :class="{'is-active': mobileNav}">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  </div>
-  <div class="navbar-menu" :class="{'is-active': mobileNav}">
-    <div class="navbar-end is-primary">
-    <a class="navbar-item is-active">Home</a>
-    <a class="navbar-item">Roster</a>
-    <a class="navbar-item">Schedule</a>
-    <a class="navbar-item">Coaches</a>
-    <a class="navbar-item">Alumni</a>
-    </div>
-  </div>
-</nav>
-
-<section class="hero has-background-red ohara-fan-hero">
-  <div class="ohara-fan-overlay"></div>
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title has-text-white pride-slogan">Pride Excellence Tradition</h1>
-    </div>
-  </div>
-</section>
-
 <div class="container profile">
   <div class="section profile-heading has-background-white">
     <div class="columns is-gapless">
@@ -59,38 +29,7 @@
   </div>
   <main-tabs :games="<%= @upcoming_games.to_json %>"
                          :stories="<%= @stories.to_json %>"></main-tabs>
-  <!--<div class="profile-options">
-    <div class="tabs is-fullwidth">
-      <main-tabs></main-tabs>
-      <ul>
-        <li class="link is-active"><a><span class="icon"><i class="fa fa-calendar-o"></i></span> <span>Upcoming Shedule</span></a></li>
-        <li class="link"><a><span class="icon"><i class="fa fa-newspaper-o"></i></span> <span>Recent Stories</span></a></li>
-        <li class="link"><a><span class="icon"><i class="fa fa-twitter-square"></i></span> <span>Social Media</span></a></li>
-        <li class="link"><a><span class="icon"><i class="fa fa-commenting-o"></i></span> <span>Contact Us</span></a></li>
-      </ul>
-    </div>
-  </div>-->
 
-  <!--<div class="spacer"></div>
-
-  <div class="columns">
-
-    <% @upcoming_games.each do |game| %>
-        <div class="column is-3">
-          <div class="card">
-            <div class="card-header">
-              <p class="card-header-title"><%= game.opponent %></p>
-            </div>
-            <div class="card-content game-card">
-              <p class="is-size-7"><%= game.time.in_time_zone("Eastern Time (US & Canada)").strftime("%m/%d @ %l:%M %p") %></p>
-              <span class="tag <%= game.home_away == 'H' ? 'is-danger' : 'is-primary' %>">
-                <%= game.home_away == 'H' ? 'Home' : 'Away' %>
-              </span>
-            </div>
-          </div>
-        </div>
-    <% end %>
-  </div>-->
 </div>
 
 <div class="container">
@@ -116,12 +55,3 @@
   </div>
 </div>
 </div>
-
-<footer class="footer ohara-footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>Cardinal O'Hara High School</p>
-      <p>Springfield, PA</p>
-    </div>
-  </div>
-</footer>

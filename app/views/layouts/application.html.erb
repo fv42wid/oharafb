@@ -19,7 +19,47 @@
 
   <body>
     <div id="vue-app">
+      <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">O'Hara Football</a>
+
+          <button class="button navbar-burger is-primary" @click="toggleNav" :class="{'is-active': mobileNav}">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="navbar-menu" :class="{'is-active': mobileNav}">
+          <div class="navbar-end is-primary">
+            <a class="navbar-item is-active">Home</a>
+            <a class="navbar-item">Roster</a>
+            <a class="navbar-item">Schedule</a>
+            <a class="navbar-item">Coaches</a>
+            <a class="navbar-item">Alumni</a>
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero has-background-red ohara-fan-hero">
+        <div class="ohara-fan-overlay"></div>
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title has-text-white pride-slogan">Pride Excellence Tradition</h1>
+          </div>
+        </div>
+      </section>
+
       <%= yield %>
+
+      <footer class="footer ohara-footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>Cardinal O'Hara High School</p>
+            <p>Springfield, PA</p>
+          </div>
+        </div>
+      </footer>
+
     </div>
   </body>
 </html>
