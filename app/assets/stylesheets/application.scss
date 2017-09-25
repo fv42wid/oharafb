@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import "bulma/sass/utilities/initial-variables";
+//@import "bulma/sass/utilities/initial-variables";
 
 //color theme
 $primary: #001039;
@@ -24,7 +24,8 @@ $primary-invert: #AAAAAA;
 $red: #bd1021;
 $danger: #d7263d;
 
-@import "bulma/bulma";
+@import "bulma";
+//@import "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css";
 
 body {
   background-color: #AAA;
