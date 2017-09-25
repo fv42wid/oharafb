@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/roster', to: 'pages#roster'
   get '/schedule', to: 'pages#schedule'
   get '/coaches', to: 'pages#coaches'
+  get '/alumni', to: 'pages#alumni'
 
   root 'pages#home'
 

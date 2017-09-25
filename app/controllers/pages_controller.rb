@@ -16,4 +16,8 @@ class PagesController < ApplicationController
   def coaches
 
   end
+
+  def alumni
+
+  end
 end

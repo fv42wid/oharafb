@@ -12,6 +12,7 @@ import VeeValidate from 'vee-validate'
 import Flickity from 'flickity'
 
 import MainTabs from './layout/main-tabs.vue'
+import MembershipForm from './layout/membership-form.vue'
 
 Vue.use(VueResource)
 Vue.use(TurbolinksAdapter)
@@ -43,7 +44,8 @@ document.addEventListener('turbolinks:load', () => {
 
       },
       components: {
-          'main-tabs' : MainTabs
+          'main-tabs' : MainTabs,
+          'membership-form' : MembershipForm
       }
   })
 })
